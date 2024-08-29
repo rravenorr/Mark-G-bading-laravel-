@@ -42,9 +42,9 @@
 </div>
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting immediately
+            event.preventDefault();
             alert('User logged in');
-            this.submit(); // Submit the form after showing the alert
+            this.submit();
         });
     </script>
     </body>
