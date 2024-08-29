@@ -12,20 +12,40 @@
 
         <!-- Scripts -->
         @routes
-        @vite(['resources/js/app.ts', "resources/js/Pages/{$page['component']}.vue"])
+        @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
         @inertiaHead
     </head>
     <body class="font-sans antialiased">
-        {{-- @inertia --}}
-        <div class="flex flex-col items-center justify-center min-h-screen min-w-screen">
-            <form method="POST" action="/login" class="flex flex-col">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
-                <button type="submit">Login</button>
-            </form>
-        </div>
+        <div class="flex min-h-screen items-center justify-center bg-gray-50">
+    <div class="w-full max-w-sm p-10">
+        <h1 class="text-2xl font-semibold mb-6">LOG IN</h1>
+        <form method="POST" action="{{ route('login') }}"  id="loginForm">
+            @csrf
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                <input type="text" name="username" id="username" autocomplete="username" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" name="password" id="password" autocomplete="current-password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+            </div>
+            <div class="flex justify-end mb-6">
+                <button type="submit" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Log in
+                </button>
+            </div>
+            <div class="border-t border-gray-300 pt-4 text-center">
+                <a href="{{ route('register') }}" class="text-blue-600 hover:text-blue-800">Sign up</a>
+            </div>
+        </form>
+    </div>
+</div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting immediately
+            alert('User logged in');
+            this.submit(); // Submit the form after showing the alert
+        });
+    </script>
     </body>
 </html>
