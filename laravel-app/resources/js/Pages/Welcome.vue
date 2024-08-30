@@ -62,6 +62,7 @@ function handleImageError() {
                             </Link>
                         </template>
                     </nav>
+                    <a href=""></a>
                 </header>
 
                 <main class="mt-6">
