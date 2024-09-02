@@ -6,7 +6,7 @@
     <Head>
         <title>Sign Up</title>
     </Head>
-    <div class="flex min-h-screen items-center justify-center bg-gray-50">
+    <div class="flex h-full items-center justify-center bg-gray-50">
     <div class="w-full max-w-sm p-10">
         <h1 class="text-2xl font-semibold mb-6">SIGN UP</h1>
         <form method="POST" action="{{ route('login') }}"  id="loginForm">
@@ -41,4 +41,5 @@
         </form>
     </div>
 </div>
+
 </template>

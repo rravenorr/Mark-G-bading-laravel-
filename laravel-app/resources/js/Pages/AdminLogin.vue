@@ -6,11 +6,11 @@ import Navigation from '../Layouts/Navigation.vue';
 
 <template>
     <Head>
-        <title>Login</title>
+        <title>Login as Admin</title>
     </Head>
         <div class="flex m-auto h-full items-center justify-center bg-gray-50">
     <div class="w-full max-w-sm p-10 ">
-        <h1 class="text-2xl font-semibold mb-6">LOG IN</h1>
+        <h1 class="text-2xl font-semibold mb-6">LOG IN AS ADMIN</h1>
         <form method="POST" action="{{ route('login') }}"  id="loginForm">
             <div class="mb-4">
                 <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
@@ -26,7 +26,7 @@ import Navigation from '../Layouts/Navigation.vue';
                 </button>
             </div>
             <div class="border-t border-gray-300 pt-4 text-center">
-                <Link href="/admin-login" class="text-blue-600 hover:text-blue-800">Log in as Admin</Link>
+                <Link href="/" class="text-blue-600 hover:text-blue-800">Login as User</Link>
             </div>
         </form>
     </div>
