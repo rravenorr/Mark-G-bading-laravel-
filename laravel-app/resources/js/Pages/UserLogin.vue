@@ -1,5 +1,5 @@
 <script setup>
-    import { Link, Head } from '@inertiajs/vue3';
+import { Link, Head } from '@inertiajs/vue3';
 import Navigation from '../Layouts/Navigation.vue';
     defineOptions({ layout: Navigation });
 </script>
